@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Star Wars Crawler</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+  </head>
 
-<head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-      <title>Starwars Crawl Creator</title>
-      <link rel="stylesheet" href="./styles/main.css" />
-</head>
+  <body>
+    <header>
+      <h1 style="color: white;">Star Wars Crawler</h1>
+    </header>
 
-<body>
-
-      <div class="prepare-crawl">
-            <form onsubmit="prepareCrawl(event)" method="POST">
-                  <textarea name="prologue" id="prologue-text" cols="30" rows="2">A long time ago in a galaxy far,
-far away....</textarea>
-                  <textarea name="banner" id="banner-text" cols="30" rows="2">Star
-Wars</textarea>
-                  <textarea name="episode" id="episode-text" cols="30" rows="1">
-Episode IX</textarea>
-                  <textarea name="title" id="title-text" cols="30" rows="1">
-The Rise of Skywalker</textarea>
-                  <textarea name="para" id="para-text" cols="30" rows="8">
+    <div class="prepare-crawl">
+      <form onsubmit="prepareCrawl(event)" method="POST">
+        <textarea
+          name="prologue"
+          id="prologue-text"
+          cols="30"
+          rows="2"
+          spellcheck="false"
+        >
+A long time ago in a galaxy far,
+far away....</textarea
+        >
+        <textarea
+          name="banner"
+          id="banner-text"
+          cols="30"
+          rows="2"
+          spellcheck="false"
+        >
+Star
+Wars</textarea
+        >
+        <textarea
+          name="episode"
+          id="episode-text"
+          cols="30"
+          rows="1"
+          spellcheck="false"
+        >
+Episode IX</textarea
+        >
+        <textarea
+          name="title"
+          id="title-text"
+          cols="30"
+          rows="1"
+          spellcheck="false"
+        >
+The Rise of Skywalker</textarea
+        >
+        <textarea
+          name="para"
+          id="para-text"
+          cols="30"
+          rows="8"
+          spellcheck="false"
+        >
 The dead speak! The galaxy has heard a mysterious broadcast, a threat of REVENGE in the sinister voice of the late EMPEROR PALPATINE.
+
 GENERAL LEIA ORGANA dispatches secret agents to gather intelligence, while REY, the last hope of the Jedi, trains for battle against the diabolical FIRST ORDER.
-Meanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....</textarea>
-                  <button id="submit" type="submit">Ready</button>
-            </form>
-      </div>
-</body>
 
-<script src="./scripts/main.js"></script>
+Meanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....</textarea
+        >
+        <button id="submit" type="submit">Ready</button>
+      </form>
+    </div>
 
+    <div class="stars"></div>
+  </body>
+
+  <script src="./scripts/main.js"></script>
 </html>
