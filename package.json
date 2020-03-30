@@ -1,0 +1,23 @@
+{
+  "name": "star-wars-opening-crawl",
+  "version": "1.0.0",
+  "description": "Create your own customised Star Wars Opening Crawl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsRockyy/star-wars-opening-crawl.git"
+  },
+  "keywords": [
+    "star",
+    "wars"
+  ],
+  "author": "Abhijeet Saxena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsRockyy/star-wars-opening-crawl/issues"
+  },
+  "homepage": "https://github.com/itsRockyy/star-wars-opening-crawl#readme"
+}
