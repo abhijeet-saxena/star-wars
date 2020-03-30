@@ -4,7 +4,7 @@
   "description": "Create your own customised Star Wars Opening Crawl",
   "main": "index.js",
   "scripts": {
-    "build": "cp src/* dist/",
+    "predeploy": "cp -Rv src/* dist/",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
