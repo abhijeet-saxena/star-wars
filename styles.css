@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Star Wars";
+  src: url("./assets/STJEDISE.TTF") format("truetype");
+}
+
+h1 {
+  font-family: "Star Wars";
+}
