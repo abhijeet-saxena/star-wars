@@ -29,12 +29,15 @@ body {
 .prologue {
   color: #4fecd9;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: normal;
 }
 
 @keyframes fade-out {
-  0%,
+  0% {
+    opacity: 0;
+  }
+  25%,
   90% {
     opacity: 1;
   }
@@ -46,11 +49,11 @@ body {
 .banner {
   font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
-  color: #fdf228;
-  font-size: 30rem;
+  -webkit-text-stroke-width: 10px;
+  -webkit-text-stroke-color: #f0bc1b;
+  color: black;
+  font-size: 35rem;
   display: none;
-  animation: zoom-out 12000ms ease-out forwards;
-  animation-delay: 500ms;
   text-align: center;
 }
 
@@ -64,11 +67,11 @@ body {
     opacity: 1;
   }
   90% {
-    font-size: 1rem;
+    transform: scale(0.08);
   }
   100% {
-    font-size: 1rem;
     opacity: 0;
+    transform: scale(0.08);
   }
 }
 
@@ -77,11 +80,12 @@ body {
   background: white;
   width: 1px;
   height: 1px;
-  z-index: 1;
+  z-index: -1;
 }
 
 .crawl-text {
   position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%) perspective(250px) rotateX(25deg);
@@ -91,9 +95,27 @@ body {
   word-wrap: break-word;
   overflow-y: scroll;
   color: #f0bc1b;
-  font-size: 300%;
+  font-size: 3.5rem;
+}
+
+.crawl-text .episode {
+  margin-top: 60vh;
+  font-size: 100%;
+}
+
+.crawl-text .title {
+  text-align: center;
+  margin: 1.5rem auto 3rem;
+  font-size: 100%;
 }
 
 .crawl-text p {
-  margin: 70vh auto;
+  font-size: 80%;
+}
+
+.crawl-text p:first-child {
+  text-align: center;
+}
+.crawl-text p:last-child {
+  margin-bottom: 70vh;
 }
