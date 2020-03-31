@@ -3,6 +3,119 @@
   src: url("./assets/STJEDISE.TTF") format("truetype");
 }
 
-h1 {
-  font-family: "Star Wars";
+/* Reset Styles  */
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prologue {
+  color: #4fecd9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  25%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.banner {
+  font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  -webkit-text-stroke-width: 10px;
+  -webkit-text-stroke-color: #f0bc1b;
+  color: black;
+  font-size: 35rem;
+  display: none;
+  text-align: center;
+}
+
+.banner p {
+  line-height: 0.85em;
+}
+
+@keyframes zoom-out {
+  0%,
+  95% {
+    opacity: 1;
+  }
+  90% {
+    transform: scale(0.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.08);
+  }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+}
+
+.crawl-text {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(250px) rotateX(25deg);
+  width: 60vw;
+  height: 60vh;
+  text-align: justify;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  color: #f0bc1b;
+  font-size: 3.5rem;
+}
+
+.crawl-text .episode {
+  margin-top: 60vh;
+  font-size: 100%;
+}
+
+.crawl-text .title {
+  text-align: center;
+  margin: 1.5rem auto 3rem;
+  font-size: 100%;
+}
+
+.crawl-text p {
+  font-size: 80%;
+}
+
+.crawl-text p:first-child {
+  text-align: center;
+}
+.crawl-text p:last-child {
+  margin-bottom: 70vh;
 }
