@@ -59,7 +59,7 @@ body {
   -webkit-text-stroke-width: 10px;
   -webkit-text-stroke-color: #f0bc1b;
   color: black;
-  font-size: 35rem;
+  font-size: 45vw;
   display: none;
   text-align: center;
 }
@@ -124,7 +124,7 @@ body {
 }
 
 .crawl-text p {
-  font-size: 80%;
+  font-size: 70%;
 }
 
 .crawl-text p:first-child {
@@ -139,9 +139,39 @@ body {
   .prologue {
     font-size: 6vw;
   }
+  .banner {
+    font-size: 100vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 8vw;
+  }
+
+  .crawl-text p {
+    font-size: 5vw;
+    margin-bottom: 5px;
+  }
 }
-@media (min-width: 481px) and (max-width: 900px) {
+@media (min-width: 481px) and (max-width: 1024px) {
   .prologue {
     font-size: 5vw;
+  }
+  .banner {
+    font-size: 80vw;
+  }
+
+  .crawl-text {
+    width: 50vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 4vw;
+  }
+
+  .crawl-text p {
+    font-size: 2.5vw;
+    margin-bottom: 5px;
   }
 }
