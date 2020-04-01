@@ -12,7 +12,7 @@ function scrollFunction() {
     top: scroll,
     behavior: "smooth"
   });
-  scroll += 0.5;
+  scroll += 0.6;
 
   if (scroll < crawl.scrollHeight) window.requestAnimationFrame(scrollFunction);
   else window.cancelAnimationFrame(id);
