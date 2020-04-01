@@ -24,12 +24,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .prologue {
   color: #4fecd9;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 4vw;
   font-weight: normal;
 }
 
@@ -52,7 +59,7 @@ body {
   -webkit-text-stroke-width: 10px;
   -webkit-text-stroke-color: #f0bc1b;
   color: black;
-  font-size: 35rem;
+  font-size: 45vw;
   display: none;
   text-align: center;
 }
@@ -96,6 +103,13 @@ body {
   overflow-y: scroll;
   color: #f0bc1b;
   font-size: 3.5rem;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.crawl-text::-webkit-scrollbar {
+  display: none;
 }
 
 .crawl-text .episode {
@@ -110,7 +124,7 @@ body {
 }
 
 .crawl-text p {
-  font-size: 80%;
+  font-size: 70%;
 }
 
 .crawl-text p:first-child {
@@ -118,4 +132,46 @@ body {
 }
 .crawl-text p:last-child {
   margin-bottom: 70vh;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  .prologue {
+    font-size: 6vw;
+  }
+  .banner {
+    font-size: 100vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 8vw;
+  }
+
+  .crawl-text p {
+    font-size: 5vw;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  .prologue {
+    font-size: 5vw;
+  }
+  .banner {
+    font-size: 80vw;
+  }
+
+  .crawl-text {
+    width: 50vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 4vw;
+  }
+
+  .crawl-text p {
+    font-size: 2.5vw;
+    margin-bottom: 5px;
+  }
 }
