@@ -7,18 +7,42 @@ const starsCount = 50;
 let scroll = 0;
 let id = null;
 
+const generateStarBackground = () => {
+  let height = window.innerHeight;
+  let width = window.innerWidth;
+  let starsHTML = "";
+
+  for (let i = 0; i < starsCount; i++) {
+    let randomX = Math.floor(Math.random() * width);
+    let randomY = Math.floor(Math.random() * height);
+    starsHTML += `<span class="star" style="top: ${randomY}px; left: ${randomX}px"></span>`;
+  }
+
+  document.querySelector(".stars").innerHTML += starsHTML;
+};
+
+const getCrawlId = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  return searchParams.has("crawl") ? searchParams.get("crawl") : false;
+};
+
 function scrollFunction() {
   crawl.scroll({
     top: scroll,
-    behavior: "smooth"
+    behavior: "smooth",
   });
-  scroll += 0.6;
+  scroll += 0.5;
 
   if (scroll < crawl.scrollHeight) window.requestAnimationFrame(scrollFunction);
   else window.cancelAnimationFrame(id);
 }
 
-window.onload = () => {
+const startCrawl = () => {
+  document.body.requestFullscreen().catch((err) => console.log(err));
+  document.querySelector(".showcase").style.display = "block";
+  themeSong.play();
+
   prologue.style.animation = "fade-out 5000ms ease-in forwards";
   prologue.onanimationend = () => {
     prologue.style.display = "none";
@@ -33,16 +57,19 @@ window.onload = () => {
   };
 };
 
-const generateStarBackground = () => {
-  let height = window.innerHeight;
-  let width = window.innerWidth;
-  let starsHTML = "";
-
-  for (let i = 0; i < starsCount; i++) {
-    let randomX = Math.floor(Math.random() * width);
-    let randomY = Math.floor(Math.random() * height);
-    starsHTML += `<span class="star" style="top: ${randomY}px; left: ${randomX}px"></span>`;
+function prepareCrawl(event) {
+  event.preventDefault();
+  const formData = new FormData(document.querySelector("form"));
+  for (var [key, value] of formData.entries()) {
+    document.querySelector(`.${key}`).innerHTML = value.replace(/\n/g, "<br>");
   }
+  document.querySelector(".prepare-crawl").style.display = "none";
+  startCrawl();
+}
 
-  document.querySelector(".stars").innerHTML += starsHTML;
+window.onload = async () => {
+  if (getCrawlId()) {
+    console.log("Will make API call to get Data");
+    //TODO: Connect with Database
+  }
 };
