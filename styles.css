@@ -96,7 +96,7 @@ body {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%) perspective(250px) rotateX(25deg);
-  width: 60vw;
+  width: 100vw;
   height: 60vh;
   text-align: justify;
   word-wrap: break-word;
@@ -113,18 +113,21 @@ body {
 }
 
 .crawl-text .episode {
-  margin-top: 60vh;
   font-size: 100%;
+  margin: 60vh auto 0;
 }
 
 .crawl-text .title {
   text-align: center;
   margin: 1.5rem auto 3rem;
   font-size: 100%;
+  width: 100%;
 }
 
 .crawl-text p {
   font-size: 70%;
+  width: 50%;
+  margin: 1rem auto 1rem;
 }
 
 .crawl-text p:first-child {
@@ -150,7 +153,6 @@ body {
 
   .crawl-text p {
     font-size: 5vw;
-    margin-bottom: 5px;
   }
 }
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -172,6 +174,23 @@ body {
 
   .crawl-text p {
     font-size: 2.5vw;
-    margin-bottom: 5px;
   }
+}
+
+/* User Form CSS */
+.prepare-crawl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+
+.prepare-crawl form {
+  width: 100%;
+}
+
+.prepare-crawl textarea {
+  display: block;
+  width: 100%;
 }
