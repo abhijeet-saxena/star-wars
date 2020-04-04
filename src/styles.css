@@ -14,11 +14,11 @@ html,
 body {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 body {
   background: black;
-  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,13 +59,17 @@ body {
   -webkit-text-stroke-width: 10px;
   -webkit-text-stroke-color: #f0bc1b;
   color: black;
-  font-size: 45vw;
+  font-size: 40vw;
   display: none;
   text-align: center;
 }
 
 .banner p {
   line-height: 0.85em;
+}
+
+.banner p:first-child {
+  margin-top: -0.25em;
 }
 
 @keyframes zoom-out {
@@ -98,12 +102,10 @@ body {
   transform: translate(-50%, -50%) perspective(250px) rotateX(25deg);
   width: 100vw;
   height: 60vh;
-  text-align: justify;
-  word-wrap: break-word;
+  text-align: center;
   overflow-y: scroll;
   color: #f0bc1b;
   font-size: 3.5rem;
-
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
@@ -113,28 +115,30 @@ body {
 }
 
 .crawl-text .episode {
-  font-size: 100%;
   margin: 60vh auto 0;
 }
 
 .crawl-text .title {
+  margin: 1.5rem auto 2.5rem;
+}
+
+.crawl-text .episode,
+.crawl-text .title {
+  font-size: 70%;
   text-align: center;
-  margin: 1.5rem auto 3rem;
-  font-size: 100%;
   width: 100%;
 }
 
-.crawl-text p {
-  font-size: 70%;
-  width: 50%;
-  margin: 1rem auto 1rem;
+.crawl-text .para {
+  margin-bottom: 70vh;
 }
 
-.crawl-text p:first-child {
-  text-align: center;
-}
-.crawl-text p:last-child {
-  margin-bottom: 70vh;
+.crawl-text .para p {
+  width: 50%;
+  margin: 1rem auto;
+  font-size: 70%;
+  text-align: justify;
+  word-wrap: break-word;
 }
 
 /* Media Queries */
