@@ -3,7 +3,7 @@ const banner = document.querySelector(".banner");
 const crawl = document.querySelector(".crawl-text");
 const themeSong = document.querySelector("audio");
 
-const starsCount = 50;
+const starsCount = 100;
 let scroll = 0;
 let id = null;
 
@@ -39,7 +39,7 @@ function scrollFunction() {
 }
 
 const startCrawl = () => {
-  document.body.requestFullscreen().catch((err) => console.log(err));
+  // document.body.requestFullscreen().catch((err) => console.log(err));
   document.querySelector(".showcase").style.display = "block";
   themeSong.play();
 
@@ -61,7 +61,13 @@ function prepareCrawl(event) {
   event.preventDefault();
   const formData = new FormData(document.querySelector("form"));
   for (var [key, value] of formData.entries()) {
-    document.querySelector(`.${key}`).innerHTML = value.replace(/\n/g, "<br>");
+    let HTML = "";
+    let bannerLines = value.trim().split("\n");
+
+    bannerLines.forEach((element) => {
+      if (element) HTML += `<p>${element}</p>`;
+    });
+    document.querySelector(`.${key}`).innerHTML = HTML;
   }
   document.querySelector(".prepare-crawl").style.display = "none";
   startCrawl();
@@ -73,3 +79,7 @@ window.onload = async () => {
     //TODO: Connect with Database
   }
 };
+
+document.body.addEventListener("mousewheel", (e) => e.preventDefault(), {
+  passive: false,
+});
