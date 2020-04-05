@@ -2,6 +2,7 @@ const prologue = document.querySelector(".prologue");
 const banner = document.querySelector(".banner");
 const crawl = document.querySelector(".crawl-text");
 const themeSong = document.querySelector("audio");
+const finishScroll = document.querySelector(".crawl-text .finish");
 
 const starsCount = 100;
 let scroll = 0;
@@ -39,7 +40,6 @@ function scrollFunction() {
 }
 
 const startCrawl = () => {
-  // document.body.requestFullscreen().catch((err) => console.log(err));
   document.querySelector(".showcase").style.display = "block";
   themeSong.play();
 
@@ -57,29 +57,51 @@ const startCrawl = () => {
   };
 };
 
-function prepareCrawl(event) {
-  event.preventDefault();
-  const formData = new FormData(document.querySelector("form"));
-  for (var [key, value] of formData.entries()) {
-    let HTML = "";
-    let bannerLines = value.trim().split("\n");
-
-    bannerLines.forEach((element) => {
-      if (element) HTML += `<p>${element}</p>`;
-    });
-    document.querySelector(`.${key}`).innerHTML = HTML;
-  }
-  document.querySelector(".prepare-crawl").style.display = "none";
-  startCrawl();
-}
-
 window.onload = async () => {
+  document
+    .querySelector(".showcase")
+    .addEventListener("mousewheel", (e) => e.preventDefault(), {
+      passive: false,
+    });
+
+  document
+    .querySelector(".showcase")
+    .addEventListener("touchstart", (e) => e.preventDefault(), {
+      passive: false,
+    });
+
   if (getCrawlId()) {
     console.log("Will make API call to get Data");
     //TODO: Connect with Database
+  } else {
+    const crawlData = Object.keys(sessionStorage);
+
+    crawlData.forEach((item) => {
+      if (document.querySelector(`.${item}`)) {
+        document.querySelector(`.${item}`).innerHTML = sessionStorage[item];
+      }
+    });
+
+    startCrawl();
+
+    const options = {
+      root: document.querySelector(".body"),
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(async (entry) => {
+        if (entry.isIntersecting) {
+          themeSong.currentTime = "78.0";
+          themeSong.onended = () => {
+            document.querySelector(".stars").classList.add("fade");
+          };
+          observer.unobserve(finishScroll);
+        }
+      });
+    }, options);
+
+    observer.observe(finishScroll);
   }
 };
-
-document.body.addEventListener("mousewheel", (e) => e.preventDefault(), {
-  passive: false,
-});
