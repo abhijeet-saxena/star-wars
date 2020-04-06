@@ -11,5 +11,5 @@ function prepareCrawl(event) {
     sessionStorage.setItem(key, HTML);
   }
   document.querySelector(".prepare-crawl").style.display = "none";
-  window.location.href = "./showcase.html";
+  window.location.href = "./showcase";
 }
