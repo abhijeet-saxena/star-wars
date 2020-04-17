@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Star Wars";
-  src: url("./assets/STJEDISE.TTF") format("truetype");
+  src: url("../assets/STJEDISE.TTF") format("truetype");
 }
 
 /* Reset Styles  */
@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0%;
   box-sizing: border-box;
+  outline: none;
 }
 
 html,
@@ -26,6 +27,14 @@ body {
   align-items: center;
 }
 
+.star {
+  position: absolute;
+  background: white;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+}
+
 /* User Form CSS */
 .prepare-crawl {
   width: 60vw;
@@ -35,32 +44,35 @@ body {
 .prepare-crawl textarea {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 2px;
   background: black;
   color: #f0bc1b;
   text-align: center;
-  outline: none;
   margin: 0.5rem auto;
-  font-weight: bold;
   border-color: grey;
+  resize: none;
+  caret-color: currentColor;
 }
 
 #prologue-text {
   color: #4fecd9;
-  border-color: rgba(79, 236, 217, 0.4);
+  border-color: rgba(79, 236, 217, 0.5);
+  font-size: 1.25rem;
 }
 
 #banner-text {
   font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #f0bc1b;
+  color: black;
   font-size: 2rem;
+  line-height: 2rem;
+  caret-color: #f0bc1b;
 }
 
 #episode-text,
-#title-text,
-#prologue-text {
+#title-text {
   font-size: 1.5rem;
 }
 
@@ -75,7 +87,6 @@ body {
   border-radius: 5px;
   font-size: 2rem;
   background: black;
-  outline: none;
   border: solid 2px #f0bc1b;
   color: #f0bc1b;
   cursor: pointer;
