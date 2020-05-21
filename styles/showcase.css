@@ -66,6 +66,10 @@ body {
   line-height: 0.85em;
 }
 
+.banner p:first-child::first-letter {
+  margin-right: 5%;
+}
+
 .banner p:first-child {
   margin-top: -0.25em;
 }
@@ -138,7 +142,7 @@ body {
 .crawl-text .finish {
   width: 100%;
   height: 1px;
-  margin-top: 70vh;
+  margin-top: 100vh;
 }
 
 .star {
@@ -148,6 +152,49 @@ body {
 
 .stars.fade .star {
   opacity: 0;
+}
+
+.ending {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  bottom: -100%;
+  left: 0;
+  transition: 4000ms ease-out;
+  transition-delay: 10000ms;
+}
+
+.ending p {
+  color: #f0bc1b;
+  font-size: 2rem;
+}
+
+.ending a {
+  border: solid 2px #f0bc1b;
+  margin: 1rem;
+  display: flex;
+  color: #f0bc1b;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.ending a span {
+  padding: 0 1rem;
+}
+
+.ending.show {
+  bottom: 0%;
 }
 
 /* Media Queries */
@@ -166,6 +213,10 @@ body {
 
   .crawl-text p {
     font-size: 5vw;
+  }
+
+  .crawl-text .finish {
+    margin-top: 60vh;
   }
 }
 @media (min-width: 481px) and (max-width: 1024px) {

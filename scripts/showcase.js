@@ -39,7 +39,7 @@ const scrollFunction = () => {
     top: scroll,
     behavior: "smooth",
   });
-  scroll += 0.4;
+  scroll += 0.35; //Adjust this value to modify scroll speed
 
   if (scroll < crawl.scrollHeight) window.requestAnimationFrame(scrollFunction);
   else window.cancelAnimationFrame(id);
@@ -109,7 +109,10 @@ window.onload = async () => {
     entries.forEach(async (entry) => {
       if (entry.isIntersecting) {
         themeSong.currentTime = "78.0";
-        themeSong.onended = () => stars.classList.add("fade");
+        document.querySelector(".ending").classList.add("show");
+        themeSong.onended = () => {
+          stars.classList.add("fade");
+        };
         observer.unobserve(finishScroll);
       }
     });
