@@ -176,7 +176,8 @@ body {
   font-size: 2rem;
 }
 
-.ending a {
+.ending a,
+.ending button {
   border: solid 2px #f0bc1b;
   margin: 1rem;
   display: flex;
@@ -187,6 +188,8 @@ body {
   border-radius: 10px;
   text-decoration: none;
   font-size: 1.5rem;
+  background: transparent;
+  cursor: pointer;
 }
 
 .ending a span {
