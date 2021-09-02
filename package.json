@@ -1,5 +1,5 @@
 {
-  "name": "star-wars-opening-crawl",
+  "name": "star-wars",
   "version": "1.0.0",
   "description": "Create your own customised Star Wars Opening Crawl",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itsRockyy/star-wars-opening-crawl.git"
+    "url": "git+https://github.com/abhijeet-saxena/star-wars.git"
   },
   "keywords": [
     "star",
@@ -18,7 +18,7 @@
   ],
   "author": "Abhijeet Saxena",
   "license": "MIT",
-  "homepage": "/star-wars-opening-crawl/",
+  "homepage": "/star-wars/",
   "dependencies": {
     "gh-pages": "^2.2.0"
   }
