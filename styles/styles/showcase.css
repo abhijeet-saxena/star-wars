@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "Star Wars";
+  src: url("../assets/STJEDISE.TTF") format("truetype");
+}
+
+/* Reset Styles  */
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.prologue {
+  color: #4fecd9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4vw;
+  font-weight: normal;
+  opacity: 0;
+}
+
+@keyframes fade-out {
+  25%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.banner {
+  font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  -webkit-text-stroke-width: 10px;
+  -webkit-text-stroke-color: #f0bc1b;
+  color: black;
+  font-size: 40vw;
+  display: none;
+  text-align: center;
+}
+
+.banner p {
+  line-height: 0.85em;
+}
+
+.banner p:first-child::first-letter {
+  margin-right: 5%;
+}
+
+.banner p:first-child {
+  margin-top: -0.25em;
+}
+
+@keyframes zoom-out {
+  0%,
+  95% {
+    opacity: 1;
+  }
+  90% {
+    transform: scale(0.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.08);
+  }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+}
+
+.crawl-text {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(250px) rotateX(25deg);
+  width: 100vw;
+  height: 60vh;
+  text-align: center;
+  overflow-y: scroll;
+  color: #f0bc1b;
+  font-size: 3.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.crawl-text::-webkit-scrollbar {
+  display: none;
+}
+
+.crawl-text .episode {
+  margin: 60vh auto 0;
+}
+
+.crawl-text .title {
+  margin: 1.5rem auto 2.5rem;
+}
+
+.crawl-text .episode,
+.crawl-text .title {
+  font-size: 70%;
+  text-align: center;
+  width: 100%;
+}
+
+.crawl-text .para p {
+  width: 50%;
+  margin: 1rem auto;
+  font-size: 70%;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.crawl-text .finish {
+  width: 100%;
+  height: 1px;
+  margin-top: 100vh;
+}
+
+.star {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.stars.fade .star {
+  opacity: 0;
+}
+
+.ending {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  bottom: -100%;
+  left: 0;
+  transition: 4000ms ease-out;
+  transition-delay: 10000ms;
+}
+
+.ending p {
+  color: #f0bc1b;
+  font-size: 2rem;
+}
+
+.ending a,
+.ending button {
+  border: solid 2px #f0bc1b;
+  margin: 1rem;
+  display: flex;
+  color: #f0bc1b;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ending a span {
+  padding: 0 1rem;
+}
+
+.ending.show {
+  bottom: 0%;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  .prologue {
+    font-size: 6vw;
+  }
+  .banner {
+    font-size: 100vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 8vw;
+  }
+
+  .crawl-text p {
+    font-size: 5vw;
+  }
+
+  .crawl-text .finish {
+    margin-top: 60vh;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  .prologue {
+    font-size: 5vw;
+  }
+  .banner {
+    font-size: 80vw;
+  }
+
+  .crawl-text {
+    width: 50vw;
+  }
+
+  .crawl-text .episode,
+  .crawl-text .title {
+    font-size: 4vw;
+  }
+
+  .crawl-text p {
+    font-size: 2.5vw;
+  }
+}

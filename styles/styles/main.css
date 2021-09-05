@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Star Wars";
+  src: url("../assets/STJEDISE.TTF") format("truetype");
+}
+
+/* Reset Styles  */
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header {
+  font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #f0bc1b;
+  color: black;
+  text-align: center;
+  letter-spacing: 5px;
+  user-select: none;
+  font-size: 2.5rem;
+}
+
+.about {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.about a {
+  margin: 0.5rem;
+  transition: 200ms ease-in-out;
+}
+
+.about a:hover {
+  transform: scale(1.25);
+}
+
+.star {
+  position: absolute;
+  background: white;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+}
+
+/* User Form CSS */
+.prepare-crawl {
+  width: 60vw;
+  text-align: center;
+}
+
+.prepare-crawl textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 2px;
+  background: black;
+  color: #f0bc1b;
+  text-align: center;
+  margin: 0.5rem auto;
+  border-color: grey;
+  resize: none;
+  caret-color: currentColor;
+}
+
+#prologue-text {
+  color: #4fecd9;
+  border-color: rgba(79, 236, 217, 0.5);
+  font-size: 1.25rem;
+}
+
+#banner-text {
+  font-family: "Star Wars", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #f0bc1b;
+  color: black;
+  font-size: 2rem;
+  line-height: 2rem;
+  caret-color: #f0bc1b;
+}
+
+#episode-text,
+#title-text {
+  font-size: 1.5rem;
+}
+
+#para-text {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: left;
+}
+
+#submit {
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background: black;
+  border: solid 2px #f0bc1b;
+  color: #f0bc1b;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+#submit:hover {
+  color: black;
+  background: #f0bc1b;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  header {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+  .prepare-crawl {
+    width: 80vw;
+    margin-left: 2rem;
+  }
+}
